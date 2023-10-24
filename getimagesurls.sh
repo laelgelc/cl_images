@@ -22,7 +22,7 @@ done
 
 grep 'id:...................|' images/urls.txt | nl -nrz | sed 's/^/t:/' | tr '\t' '|' > w
 
-for n in `seq -w 1 13`  # how many batches
+for n in `seq -w 1 50`  # how many batches
 do
   printf "$n\n%.0s" {1..1000}  # how many lines in each batch
 done | sed 's/^/fl:/' > z
