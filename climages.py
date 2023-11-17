@@ -62,7 +62,7 @@ from google.cloud import vision
 #        os.makedirs(f'images/google_cloud/labels/{folder}', exist_ok = True)
 #        # os.system(f'rm -f images/google_cloud/labels/{folder}/*')
 #
-#last = subprocess.run(['wsl', 'tail', '-1', 'images/images_index.txt'], capture_output = True, text = True).stdout.strip().split('|')[1][2:]
+#last = subprocess.run(['tail', '-1', 'images/images_index.txt'], capture_output = True, text = True).stdout.strip().split('|')[1][2:]
 #last = int(last)
 #
 #for i in range(1, last + 1):
