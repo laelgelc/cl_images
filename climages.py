@@ -27,7 +27,7 @@ from google.cloud import vision
 #    for root, dirs, files in os.walk(source_directory):
 #        for file in files:
 #            local_path = os.path.join(root, file)
-#            blob_path = os.path.join(destination_blob_name, os.path.relpath(local_path, source_directory)).replace('\\', '/')
+#            blob_path = os.path.join(destination_blob_name, os.path.relpath(local_path, source_directory))
 #            blob = bucket.blob(blob_path)
 #            blob.upload_from_filename(local_path)
 #
@@ -41,7 +41,7 @@ from google.cloud import vision
 #        end = True
 #        clear_output()
 #
-#source_directory = r'.\images\images'
+#source_directory = './images/images'
 #destination_blob_name = 'images'
 #upload_directory_to_bucket(bucket_name, source_directory, destination_blob_name)
 
