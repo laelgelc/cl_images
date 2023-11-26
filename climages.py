@@ -35,6 +35,14 @@ from google.cloud import vision
 #
 #end = False
 #while end == False:
+#    my_project = str(input('Enter your project name: '))
+#    if my_project != '':
+#        os.environ['PROJECT_ID'] = my_project
+#        end = True
+#        clear_output()
+#
+#end = False
+#while end == False:
 #    my_bucket = str(input('Enter your bucket name: '))
 #    if my_bucket != '':
 #        bucket_name = my_bucket
@@ -61,6 +69,22 @@ from google.cloud import vision
 #        folder = folder.strip()
 #        os.makedirs(f'images/google_cloud/labels/{folder}', exist_ok = True)
 #        # os.system(f'rm -f images/google_cloud/labels/{folder}/*')
+#
+#end = False
+#while end == False:
+#    my_project = str(input('Enter your project name: '))
+#    if my_project != '':
+#        os.environ['PROJECT_ID'] = my_project
+#        end = True
+#        clear_output()
+#
+#end = False
+#while end == False:
+#    my_bucket = str(input('Enter your bucket name: '))
+#    if my_bucket != '':
+#        bucket_name = my_bucket
+#        end = True
+#        clear_output()
 #
 #last = subprocess.run(['tail', '-1', 'images/images_index.txt'], capture_output = True, text = True).stdout.strip().split('|')[1][2:]
 #last = int(last)
