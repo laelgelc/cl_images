@@ -134,7 +134,8 @@ from google.cloud import vision
 #for file in files_to_process:
 #    df = pd.read_csv(file)
 #    df_data = pd.concat([df_data, df], axis=1)
-#df_data.to_csv('data.csv', index=False)
+#df_data.to_csv('images/data.csv', index=False)
+#print('images/data.csv created')
 
 # 'correlationmatrix' function
 #dataframe = pd.read_csv('images/data.csv')
