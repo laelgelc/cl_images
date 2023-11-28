@@ -4,6 +4,7 @@ from IPython.display import clear_output
 import os
 from pathlib import Path
 import pandas as pd
+import glob
 from google.cloud import storage
 from google.cloud import vision
 
@@ -121,8 +122,19 @@ from google.cloud import vision
 # 'sas' function
 #subprocess.run(['./sas.sh'], capture_output = True)
 
-# 'datamatrix' function
+# 'datamatrix' function (in the case of lighter workloads)
 #subprocess.run(['./datamatrix.sh'], capture_output = True)
+
+# 'datamatrix' function (in the case of heavier workloads)
+#subprocess.run(['./datamatrix1.sh'], capture_output = True)
+#
+#input_folder = 'images/temp'
+#files_to_process = sorted(glob.glob(input_folder + '/*'))
+#df_data = pd.DataFrame()
+#for file in files_to_process:
+#    df = pd.read_csv(file)
+#    df_data = pd.concat([df_data, df], axis=1)
+#df_data.to_csv('data.csv', index=False)
 
 # 'correlationmatrix' function
 #dataframe = pd.read_csv('images/data.csv')
