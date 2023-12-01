@@ -38,7 +38,7 @@ from google.cloud import vision
 #while end == False:
 #    my_project = str(input('Enter your project name: '))
 #    if my_project != '':
-#        os.environ['PROJECT_ID'] = my_project
+#        os.environ['GOOGLE_CLOUD_PROJECT'] = my_project
 #        end = True
 #        clear_output()
 #
@@ -75,7 +75,7 @@ from google.cloud import vision
 #while end == False:
 #    my_project = str(input('Enter your project name: '))
 #    if my_project != '':
-#        os.environ['PROJECT_ID'] = my_project
+#        os.environ['GOOGLE_CLOUD_PROJECT'] = my_project
 #        end = True
 #        clear_output()
 #
