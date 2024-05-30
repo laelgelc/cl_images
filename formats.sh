@@ -1,6 +1,7 @@
 #!/bin/bash
 clear
-nlines=$( cat tweets/emoji.txt | wc -l | tr -dc '[0-9]' )
+#nlines=$( cat tweets/emoji.txt | wc -l | tr -dc '[0-9]' ) # This line looks inconsistent as it refers to a list of tweets. We replaced it by the following one that takes reference on the index of images
+nlines=$( cat images/images_index.txt | wc -l | tr -dc '[0-9]' )
 
 tail +2 images/correlation | tr -s ' ' | sed 's/^/CORR /' > bottom
 head -1 images/correlation | tr -s ' ' | sed 's/^[ ]*//' | sed "s/\(v......\)/$nlines/g" | sed 's/^/N . /' > n
