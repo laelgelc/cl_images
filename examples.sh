@@ -1,6 +1,11 @@
 #!/bin/bash
 clear
 
+# Creating prerequisite files
+jq . tweets/scraped.txt > tweets/jq.txt
+cut -d'|' -f5 images/images_index.txt | sed 's/u://' | sort | uniq | nl -nrz | tr '\t' ' ' | sed 's/^/u/' > user_index.txt
+
+# Creating the examples
 project=cl_st1_yara
 
 mkdir -p images/examples
@@ -57,9 +62,10 @@ do
           username=$( grep -w $file user_index.txt | cut -d' ' -f2 )
           picture=$( grep -w $file images/images_index.txt | cut -d'|' -f2,7 | tr ':|' ' ' | cut -d' ' -f2,4 | sed 's;\(.*\) \(.*\);\1.\2;' )
           folder=$( grep -w $file images/images_index.txt | cut -d'|' -f1 | tr ':|' ' ' | cut -d' ' -f2  )
+          # Note: The 'jq.txt' file is obtained by changing to the 'tweets' directory and running 'jq . scraped.txt > jq.txt'
           url=$( grep -m1 -B5 $file tweets/jq.txt | grep '"url"'  | cut -d':' -f2- | tr -d '",' | sed 's/^[ ]*//' )
           extension=$( echo $picture | cut -d'.' -f2 )
-          cp images/images/$folder/$picture images/examples/image_f"$i""$pole"_x`"$n"."$extension"
+          cp images/images/$folder/$picture images/examples/image_f"$i""$pole"_x"$n"."$extension"
 
           echo "---------------" 
 
